@@ -1,151 +1,157 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>お問い合わせフォーム</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="contactstyle.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-  </head>
-  <body>
-    <div class="container">
-      <form id="contact_form">
-        <div id="contact-data-input">
-          <div class="purple_top"></div>
-             <h1 class="header_h1">
-               お問い合わせフォーム
-             </h1>
-             <div class="contact-form_row row">
-              <div class="contact-form_col col s12 m4">
-                <div class="contact-form_col_title">お名前
-                  <span class="contact-form_col_need">必須</span>
-                </div>
-              </div> 
-              <div class="contact-form_col col s6 m4">
-                <input type="text" id="firstName" name="First Name" placeholder="First Name" class="purple_box">
-              </div>
-              <div class="contact-form_col col s6 m4">
-                <input type="text" id="lastName" name="Last Name" placeholder="Last Name" class="purple_box">
-              </div>
+
+<head>
+  <title>お問い合わせフォーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="contactstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" id="contact_form" name="contact_form" method="post">
+      <div id="contact-data-input">
+        <div class="purple_top"></div>
+        <h1 class="header_h1">
+          お問い合わせフォーム
+        </h1>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s12 m4">
+            <div class="contact-form_col_title">お名前
+              <span class="contact-form_col_need">必須</span>
             </div>
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s4 m4">
-                <div class="contact-form_col_title">
-                  性別
-                </div>
-              </div>
-              <div class="contact-form_col col s4 m4">
-                <label class="contact-form_col_title">
-                  <input class="with-gap" name="性別" id="gender-1" type="radio" checked />
-                  <span class="fs-1">男性</span>
-                </label>
-              </div>
-              <div class="contact-form_col col s4 m4">
-                <label class="contact-form_col_title">
-                  <input class="with-gap" name="性別" id="gender-2" type="radio" />
-                  <span class="fs-1">女性</span>
-                </label>
-              </div>
-            </div>
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s4 m4">
-                <div class="contact-form_col_title">
-                  ご住所
-                </div>
-              </div>
-              <div class="contact-form_col col s8 m8">
-                〒<input type="number" id="zip1" name="ご住所" pattern="\d{3}" placeholder="000">
-                －<input type="number" id="zip2" name="ご住所" pattern="\d{4}" placeholder="0000">
-              </div>
-              <div class="contact-form_col col s12 m4"></div>
-              <div class="contact-form_col col s12 m8">
-                <input type="text" id="address-text" class="purple_box_no-shadow">
-              </div>
-            </div>
-           
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s5 m4">
-                <div class="contact-form_col_title">電話番号
-                  <span class="contact-form_col_need">必須</span>
-                </div>
-              </div>
-              <div class="contact-form_col col s7 m4">
-                <input type="tel" id="phone_number" name="電話番号" placeholder="09123456789" class="purple_box_no-shadow">
-              </div>
-            </div>
-            
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s5 m4">
-                <div class="contact-form_col_title">メール
-                  <span class="contact-form_col_need">必須</span>
-                </div>
-              </div>
-              <div class="contact-form_col col s7 m4">
-                <input type="email" id="email" name="メール" placeholder="contact@gmail.com" class="purple_box_no-shadow">
-              </div>
-            </div>
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s5 m4">
-                <div class="contact-form_col_title">
-                  確認メール
-                </div>
-              </div>
-              <div class="contact-form_col col s7 m4">
-                <input type="email" id="confirm_email" name="確認メール" placeholder="contact@gmail.com" class="purple_box_no-shadow">
-                <span id="checked-email" style="display: none">メールアドレスと同じアドレスを入力してください</span>
-              </div>
-            </div>
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s12 m4">
-                <div class="contact-form_col_title">
-                  お問合せ種類
-                </div>
-              </div>
-              <div class="contact-form_col col s12 m8">
-                <select name="contact type" id="contact_type" onchange="ShowHideDiv()" class="contact-type purple_box_no-shadow">
-                  <option value="" selected="">ご選択ください</option>
-                  <option value="勉強会について">勉強会について</option>
-                  <option value="レクチャー用の書類提出">レクチャー用の書類提出</option>
-                  <option value="新しいクラスの情報">新しいクラスの情報</option>
-                  <option value="個人プロジェクトの窓口">個人プロジェクトの窓口</option>
-                  <option value="定例ミーティングの欠席に関する連絡">定例ミーティングの欠席に関する連絡</option>
-                  <option value="それぞれのご意見">それぞれのご意見</option>
-                </select>
-              </div>
-            </div>
-            <div id="new_class" style="display: none" class="contact-form_row row">
-              <div class="contact-form_col col s12 m4">
-                <div class="contact-form_col_title">
-                  レベルと資格
-                  <span class="contact-form_col_need">必須</span>
-                </div>
-              </div>
-              <div class="contact-form_col col s12 m8">
-                <input type="text" id="level_box" class="purple_box_no-shadow">
-              </div>
-            </div>
-            <div class="contact-form_row row">
-              <div class="contact-form_col col s12 m4">
-                <div class="contact-form_col_title">
-                  お問合せ内容
-                </div>
-              </div>
-              <div class="contact-form_col col s12 m8">
-                <textarea name="お問合せ内容" id="contact_content" class="contact-form_text-area" placeholder="こちらにお問合せ内容をご入力ください。"></textarea>
-              </div>
-            </div>
-            <p>
-              <label class="label-color">
-                <input type="checkbox" id="checkbox" class="filled-in" />
-                <span>学生の時はこちらにチェックする</span>
-              </label>
-            </p>
-            <button type="submit" class="contact-btn hide-on-small-only mt-5 mb-5" value="上記に同意してお問合せを送信する">上記に同意してお問合せを送信する</button>
-            <button type="submit" class="contact-btn hide-on-med-and-up mt-5 mb-5" value="お問合せを送信する">お問合せを送信する</button>
+          </div>
+          <div class="contact-form_col col s6 m4">
+            <input type="text" id="firstName" name="First Name" placeholder="First Name" class="purple_box">
+          </div>
+          <div class="contact-form_col col s6 m4">
+            <input type="text" id="lastName" name="Last Name" placeholder="Last Name" class="purple_box">
+          </div>
         </div>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s4 m4">
+            <div class="contact-form_col_title">
+              性別
+            </div>
+          </div>
+          <div class="contact-form_col col s4 m4">
+            <label class="contact-form_col_title">
+              <input class="with-gap" name="性別" id="gender-1" type="radio" checked />
+              <span class="fs-1">男性</span>
+            </label>
+          </div>
+          <div class="contact-form_col col s4 m4">
+            <label class="contact-form_col_title">
+              <input class="with-gap" name="性別" id="gender-2" type="radio" />
+              <span class="fs-1">女性</span>
+            </label>
+          </div>
+        </div>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s4 m4">
+            <div class="contact-form_col_title">
+              ご住所
+            </div>
+          </div>
+          <div class="contact-form_col col s8 m8">
+            〒<input type="number" id="zip1" name="ご住所" pattern="\d{3}" placeholder="000">
+            －<input type="number" id="zip2" name="ご住所" pattern="\d{4}" placeholder="0000">
+          </div>
+          <div class="contact-form_col col s12 m4"></div>
+          <div class="contact-form_col col s12 m8">
+            <input type="text" id="address-text" class="purple_box_no-shadow">
+          </div>
+        </div>
+
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s5 m4">
+            <div class="contact-form_col_title">電話番号
+              <span class="contact-form_col_need">必須</span>
+            </div>
+          </div>
+          <div class="contact-form_col col s7 m4">
+            <input type="tel" id="phone_number" name="電話番号" placeholder="09123456789" class="purple_box_no-shadow">
+          </div>
+        </div>
+
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s5 m4">
+            <div class="contact-form_col_title">メール
+              <span class="contact-form_col_need">必須</span>
+            </div>
+          </div>
+          <div class="contact-form_col col s7 m4">
+            <input type="email" id="email" name="メール" placeholder="contact@gmail.com" class="purple_box_no-shadow">
+          </div>
+        </div>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s5 m4">
+            <div class="contact-form_col_title">
+              確認メール
+            </div>
+          </div>
+          <div class="contact-form_col col s7 m4">
+            <input type="email" id="confirm_email" name="確認メール" placeholder="contact@gmail.com"
+              class="purple_box_no-shadow">
+            <span id="checked-email" style="display: none">メールアドレスと同じアドレスを入力してください</span>
+          </div>
+        </div>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s12 m4">
+            <div class="contact-form_col_title">
+              お問合せ種類
+            </div>
+          </div>
+          <div class="contact-form_col col s12 m8">
+            <select name="contact type" id="contact_type" onchange="ShowHideDiv()"
+              class="contact-type purple_box_no-shadow">
+              <option value="" selected="">ご選択ください</option>
+              <option value="勉強会について">勉強会について</option>
+              <option value="レクチャー用の書類提出">レクチャー用の書類提出</option>
+              <option value="新しいクラスの情報">新しいクラスの情報</option>
+              <option value="個人プロジェクトの窓口">個人プロジェクトの窓口</option>
+              <option value="定例ミーティングの欠席に関する連絡">定例ミーティングの欠席に関する連絡</option>
+              <option value="それぞれのご意見">それぞれのご意見</option>
+            </select>
+          </div>
+        </div>
+        <div id="new_class" style="display: none" class="contact-form_row row">
+          <div class="contact-form_col col s12 m4">
+            <div class="contact-form_col_title">
+              レベルと資格
+              <span class="contact-form_col_need">必須</span>
+            </div>
+          </div>
+          <div class="contact-form_col col s12 m8">
+            <input type="text" id="level_box" class="purple_box_no-shadow">
+          </div>
+        </div>
+        <div class="contact-form_row row">
+          <div class="contact-form_col col s12 m4">
+            <div class="contact-form_col_title">
+              お問合せ内容
+            </div>
+          </div>
+          <div class="contact-form_col col s12 m8">
+            <textarea name="お問合せ内容" id="contact_content" class="contact-form_text-area"
+              placeholder="こちらにお問合せ内容をご入力ください。"></textarea>
+          </div>
+        </div>
+        <p>
+          <label class="label-color">
+            <input type="checkbox" id="checkbox" class="filled-in" />
+            <span>学生の時はこちらにチェックする</span>
+          </label>
+        </p>
+        <button type="submit" class="contact-btn hide-on-small-only mt-5 mb-5"
+          value="上記に同意してお問合せを送信する">上記に同意してお問合せを送信する</button>
+        <button type="submit" class="contact-btn hide-on-med-and-up mt-5 mb-5" value="お問合せを送信する">お問合せを送信する</button>
+      </div>
       </from>
-    
+
       <div id="contact-data-output" style="display: none">
         <h1 class="header_h1">送信されたお問い合わせフォームデータ！</h1>
         <div class="contact-form_label">お名前:<span id="output-name"></span></div><br>
@@ -160,7 +166,8 @@
         <div class="contact-form_label">学生：<span id="output-checkbox"></span></div><br>
       </div>
 
-    </div>
-    <script type="text/javascript" src="contact.js"></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="contact.js"></script>
+</body>
+
 </html>

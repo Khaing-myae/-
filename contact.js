@@ -37,6 +37,21 @@ function onsubmit(e){
       } else {
         document.getElementById("output-phone").innerHTML = phoneNumber;
       }
+      function ValidatePhoneNumber(inputText)
+      {
+        var phone_numberFormat = /^\d{10}$/;
+        if(inputText.value.match(phone_numberFormat))
+        {
+          document.contact_form.電話番号.focus();
+            return true;
+        }
+        else
+        {
+           alert("Not a valid Phone Number");
+           document.contact_form.電話番号.focus();
+           return false;
+        }
+        }
 
   var email = document.getElementById("email").value;
   var confirmEmail = document.getElementById("confirm_email").value;
@@ -53,7 +68,22 @@ function onsubmit(e){
         document.getElementById("output-email").innerHTML = email;
         document.getElementById("output-confirmEmail").innerHTML = confirmEmail;
       }
-
+      function ValidateEmail(inputText)
+      {
+      var emailFormat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+      if(inputText.value.match(emailFormat))
+      {
+      alert("You have entered a valid email address!");    
+      document.contact_form.メール.focus();
+      return true;
+      }
+      else
+      {
+      alert("You have entered an invalid email address!");    
+      document.contact_form.メール.focus();
+      return false;
+      }
+      }
   
       if (document.getElementById("contact_type").value == "勉強会について") {
        document.getElementById("output-contact-type").innerHTML = "勉強会について";
