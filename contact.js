@@ -3,6 +3,29 @@ function ShowHideDiv() {
   var new_class = document.getElementById("new_class");
   new_class.style.display = contact_type.value == "新しいクラスの情報" ? "block" : "none";
 }
+var phoneNumber = document.getElementById("phone_number")
+var checkedPhone = document.getElementById("checked-phone");
+      phoneNumber.onkeyup = function() {
+      var numbers = /^[0-9]+$/;
+            if(phoneNumber.value.match(numbers)) { 
+              return true;
+            } else{ 
+              checkedPhone.style.display = "block";
+              return false;
+            } 
+          }  
+
+ var email = document.getElementById("email")
+ var validEmail = document.getElementById("valid_email");
+  email.onkeyup = function() {
+  var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email.value.match(emailFormat)) { 
+        return true;
+    } else{ 
+      validEmail.style.display = "block";
+      return false;
+     } 
+}  
 var contactForm = document.getElementById("contact_form")
 contactForm.addEventListener('submit',onsubmit);
 function onsubmit(e){
@@ -36,31 +59,17 @@ function onsubmit(e){
         return false;
       } else {
         document.getElementById("output-phone").innerHTML = phoneNumber;
-      }
-      function ValidatePhoneNumber(inputText)
-      {
-        var phone_numberFormat = /^\d{10}$/;
-        if(inputText.value.match(phone_numberFormat))
-        {
-          document.contact_form.電話番号.focus();
-            return true;
-        }
-        else
-        {
-           alert("Not a valid Phone Number");
-           document.contact_form.電話番号.focus();
-           return false;
-        }
-        }
+      } 
+      
 
   var email = document.getElementById("email").value;
   var confirmEmail = document.getElementById("confirm_email").value;
   var checkedEmail = document.getElementById("checked-email");
+  
       if(email !== confirmEmail) {
         checkedEmail.style.display = "block";
         return false;
       }
-
       if(email === '') {
         window.alert('メールアドレスを入れてください。')
         return false;
@@ -68,23 +77,7 @@ function onsubmit(e){
         document.getElementById("output-email").innerHTML = email;
         document.getElementById("output-confirmEmail").innerHTML = confirmEmail;
       }
-      function ValidateEmail(inputText)
-      {
-      var emailFormat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-      if(inputText.value.match(emailFormat))
-      {
-      alert("You have entered a valid email address!");    
-      document.contact_form.メール.focus();
-      return true;
-      }
-      else
-      {
-      alert("You have entered an invalid email address!");    
-      document.contact_form.メール.focus();
-      return false;
-      }
-      }
-  
+       
       if (document.getElementById("contact_type").value == "勉強会について") {
        document.getElementById("output-contact-type").innerHTML = "勉強会について";
       }
