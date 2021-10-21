@@ -75,7 +75,7 @@ function onsubmit(e){
       }
   
     //To get Address
-    document.getElementById("output-address").innerHTML = "テ"+ zip1 +" －"+ + zip2 + addressText;
+    document.getElementById("output-address").innerHTML = "〒"+ zip1 +" －"+ + zip2 + addressText;
 
     //To get Phone Number
       if(phoneNumber === '') {
@@ -152,8 +152,7 @@ function onsubmit(e){
 
       if (contact_dataOutput.style.display === "none") {
         contact_dataOutput.style.display = "block";
-        contact_dataInput.style.display = "none"
-      }
+      }      
 }
 
     
