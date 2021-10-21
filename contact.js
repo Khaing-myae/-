@@ -62,6 +62,7 @@ function onsubmit(e){
     //To get Name
       if(firstName, lastName === '') {
        window.alert('お名前を入れてください。');
+       document.getElementById("firstName","lastName").focus();
         return false;
       } else {
         document.getElementById("output-name").innerHTML = firstName + " " + lastName;
@@ -80,6 +81,7 @@ function onsubmit(e){
     //To get Phone Number
       if(phoneNumber === '') {
         window.alert('電話番号を入れてください。');
+        document.getElementById("phone_number").focus();
         return false;
       } else {
         document.getElementById("output-phone").innerHTML = phoneNumber;
@@ -91,7 +93,8 @@ function onsubmit(e){
         return false;
       }
       if(email === '') {
-        window.alert('メールアドレスを入れてください。')
+        window.alert('メールアドレスを入れてください。');
+        document.getElementById("email").focus();
         return false;
       }else {
         document.getElementById("output-email").innerHTML = email;
@@ -127,6 +130,7 @@ function onsubmit(e){
   //To get Level Box
   if(level_boxText === '' && (document.getElementById("contact_type").value == "新しいクラスの情報")) {
     window.alert('レベルと資格を入れてください。');
+    document.getElementById("level_box").focus();
     return false;
   } if (document.getElementById("contact_type").value != "新しいクラスの情報"){
     document.getElementById("output-level_warp").style.display = "none";
