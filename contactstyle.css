@@ -6,7 +6,7 @@ body {
         "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro",
         "Hiragino Kaku Gothic Pro", メイリオ, Meiryo;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #e5e5e5;
 }
 .mt-1 {
     margin-top: 0.25rem !important;
@@ -52,13 +52,10 @@ body {
         width: 100% !important;
     }
 }
-a:hover {
-    opacity: 0.7;
-    text-decoration: none;
-}
-.purple_top {
-    background: #7879f1;
-    height: 1rem;
+.contact-form {
+    padding: 3rem;
+    background-color: #ffffff;
+    border-top: 3px solid #7879f1;
 }
 .header_h1 {
     text-align: center;
@@ -192,6 +189,9 @@ select.contact-type {
     border-radius: 5px;
     color: #ffffff;
     padding: 0.6rem 0.5rem 0.6rem 0.5rem;
+}
+.contact-btn:hover {
+    opacity: 0.7;
 }
 .error-text {
     color: #df2020;
